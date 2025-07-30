@@ -11,7 +11,7 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser()); // Middleware to parse cookies
 
-const allowedOrigins = ["https://auth-next-client.vercel.app/"];
+const allowedOrigins = ["https://auth-next-client.vercel.app"];
 
 app.use(
   cors({
