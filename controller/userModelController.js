@@ -5,6 +5,7 @@ const validator = require("validator");
 const User = require("../model/userModel.js");
 const nodemailer = require("nodemailer");
 
+
 //Utility function to create a JWT
 const createToken = (_id) => {
   return jwt.sign({ _id }, process.env.SECRET, { expiresIn: "3d" });
@@ -108,7 +109,7 @@ const loginUser = async (req, res) => {
         success: true,
         message: "Successfully Login",
         user: {
-         id: user._id,
+          id: user._id,
           name: user.name,
           email: user.email,
         },
@@ -194,8 +195,6 @@ const resetPassword = async (req, res) => {
     res.status(500).json({ message: "Invalid or expired token" });
   }
 };
-
-
 
 module.exports = {
   registerUser,
